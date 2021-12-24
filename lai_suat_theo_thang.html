@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất theo tháng</title>
+</head>
+<body>
+<input type="number" id="tienGui">
+<select id="thanggui">
+    <option value="số tháng">Số tháng gửi</option>
+    <option value="3">3 tháng</option>
+    <option value="6">6 tháng</option>
+    <option value="12">12 tháng</option>
+</select>
+<button onclick="ketqua()"> Kết quả</button>
+<p id="demo"></p>
+
+<script>
+    function ketqua() {
+        let tiengui = document.getElementById('tienGui').value
+        let thangGui = document.getElementById('thanggui').value
+        let tongsaulai =0
+        tiengui = parseInt(tiengui)
+         thangGui = parseInt(thangGui)
+        if (thangGui =='3') {
+           let laisuat=0.65
+            let tienlai = thangGui * tiengui * (laisuat / 12)
+             tongsaulai = tienlai + tiengui
+            document.getElementById('demo').innerHTML =tongsaulai
+        }else  if(thangGui =='6'){
+           let laisuat=0.66
+            let tienlai= thangGui * tiengui * (laisuat / 12)
+            let tongsaulai = tienlai + tiengui
+            document.getElementById('demo').innerHTML = tongsaulai
+        }else if (thangGui=='12'){
+           let laisuat=0.7
+            let tienlai = thangGui * tiengui * (laisuat / 12)
+            let tongsaulai = tienlai + tiengui
+            document.getElementById('demo').innerHTML = tongsaulai
+        }
+        // let tienlai1thang = thanggui * tiengui * (laisuat / 12)
+        // let tongsaulai = tienlai1thang + tiengui
+        // document.getElementById('demo').innerHTML = tongsaulai
+
+
+    }
+</script>
+
+</body>
+</html>
